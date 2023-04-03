@@ -1,0 +1,46 @@
+.form {
+  font-family: Roboto, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: whitesmoke;
+}
+.form_wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.0625rem solid #c0bcbc;
+  padding: 0.5rem 1rem;
+  width: 98vw;
+}
+.form_content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.form_login {
+  padding: 30px;
+  background-color: rgb(110, 110, 104);
+  width: 300px;
+}
+.form_login h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+.form_login .form_btn {
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+}
+.form_login .form_btn:hover {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+.form_left .form_input {
+  width: 100%;
+}
+.form_left div {
+  color: white;
+}

@@ -1,0 +1,45 @@
+.root {
+  flex-grow: 1;
+}
+
+.menuButton {
+  color: black;
+}
+
+.title {
+  font-size: 25px;
+  color: #5f6368;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.appBar {
+  background-color: white;
+  color: black;
+}
+
+.toolBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header_wrapper_right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 15px;
+  color: #5f6368;
+  cursor: pointer;
+}
+.link_header {
+  text-decoration: none;
+}
