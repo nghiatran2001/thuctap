@@ -8,14 +8,14 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Add, Apps } from "@mui/icons-material";
+import { Apps } from "@mui/icons-material";
 import CreateClass from "../CreateClass/CreateClass";
 import { useLocalContext } from "../../context/context";
 import JoinClass from "../JoinClass/JoinClass";
 import Login from "../Login/Login";
 import { Link } from "react-router-dom";
 
-export default function Header({ children }) {
+export default function HeaderContent({ children }) {
   const [anchorE1, setAnchorE1] = React.useState(null);
   const handleClick = (event) => {
     setAnchorE1(event.currentTarget);
@@ -53,9 +53,18 @@ export default function Header({ children }) {
                 Lớp học
               </Typography>
             </Link>
+            <Link to="/main" className="link_header">
+              <Typography variant="6" className="title1">
+                Bảng tin
+              </Typography>
+            </Link>
+            <Link to="/test" className="link_header">
+              <Typography variant="6" className="title1">
+                Trắc nghiệm
+              </Typography>
+            </Link>
           </div>
           <div className="header_wrapper_right">
-            <Add onClick={handleClick} className="icon" />
             <Apps className="icon" />
             <Menu
               id="simple-menu"

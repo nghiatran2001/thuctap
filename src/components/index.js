@@ -6,3 +6,8 @@ export { default as Login } from "./Login/Login";
 export { default as JoinedClasses } from "./JoinedClasses/JoinedClasses";
 export { default as Main } from "./Main/Main";
 export { default as Announcment } from "./Announcment/Announcment";
+export { default as DrawerContent } from "./Drawer/DrawerContent";
+export { default as HeaderContent } from "./Header/HeaderContent";
+export { default as Test } from "./Test/Test";
+export { default as Test1 } from "./Test/Test1";
+export { default as Test2 } from "./Test/Test2";

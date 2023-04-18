@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Announcment, Drawer } from "..";
+import { Announcment, DrawerContent } from "..";
 import "./style.css";
 import { Avatar, Button, TextField } from "@mui/material";
 
@@ -14,7 +14,7 @@ export default function Main() {
   };
   return (
     <div>
-      <Drawer />
+      <DrawerContent />
       <div className="main">
         <div className="main__wrapper">
           <div className="main__content">
