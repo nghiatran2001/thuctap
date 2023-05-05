@@ -17,9 +17,7 @@ import { Link } from "react-router-dom";
 
 export default function HeaderContent({ children }) {
   const [anchorE1, setAnchorE1] = React.useState(null);
-  const handleClick = (event) => {
-    setAnchorE1(event.currentTarget);
-  };
+
   const handleClose = () => {
     setAnchorE1(null);
   };
@@ -44,11 +42,11 @@ export default function HeaderContent({ children }) {
         <Toolbar className="toolBar">
           <div className="headerWrapper">
             {children}
-            <img
-              src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
-              alt="Classroom"
-            />
-            <Link to="/" className="link_header">
+            <Link to="/" className="link_header1">
+              <img
+                src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
+                alt="Classroom"
+              />
               <Typography variant="6" className="title">
                 Lớp học
               </Typography>
@@ -56,6 +54,11 @@ export default function HeaderContent({ children }) {
             <Link to="/main" className="link_header">
               <Typography variant="6" className="title1">
                 Bảng tin
+              </Typography>
+            </Link>
+            <Link to="/tuluan" className="link_header">
+              <Typography variant="6" className="title1">
+                Tự luận
               </Typography>
             </Link>
             <Link to="/test" className="link_header">

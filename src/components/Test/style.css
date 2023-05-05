@@ -11,6 +11,15 @@
   margin-top: 1.5rem;
   overflow: hidden;
 }
+.test__content .test_btn {
+  margin: 0 20px;
+  color: white;
+  background-color: #2e7bc4;
+}
+.test__content .test_btn:hover {
+  color: rgb(0, 80, 252);
+  background-color: #cacaca;
+}
 .test_btn {
   background-color: #4285f4;
   margin: 0 30px;
@@ -105,6 +114,15 @@
   width: 900px;
   height: 100%;
 }
+.test__status .test_btn {
+  color: white;
+  background-color: #2e7bc4;
+}
+.test__status .test_btn:hover {
+  color: rgb(0, 80, 252);
+  background-color: #cacaca;
+}
+
 .test__status h1 {
   padding-bottom: 30px;
 }

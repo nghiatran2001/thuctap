@@ -1,7 +1,7 @@
 import React from "react";
 import { DrawerContent } from "..";
 import "./style.css";
-import { Button, Checkbox } from "@mui/material";
+import { Button} from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function Test() {
