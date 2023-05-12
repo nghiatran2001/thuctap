@@ -29,29 +29,6 @@ export default function JoinedClasses() {
           </div>
         </div>
       </li>
-      <li className="joined__list">
-        <div className="joined__wrapper">
-          <div className="joined__container">
-            <div className="joined__imgWrapper"></div>
-            <div className="joined__image"></div>
-            <div className="joined__content">
-              <Link to="/mainstudent" className="link_joinedclasses">
-                <h2>D19_TH01</h2>
-              </Link>
-              <p className="joined__owner">Nam@gmail.com</p>
-            </div>
-            <Avatar
-              className="joined__avatar"
-              src="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s75-c-fbw=1/photo.jpg"
-              alt=""
-            />
-          </div>
-          <div className="joined__bottom">
-            <PermContactCalendar />
-            <FolderOpen />
-          </div>
-        </div>
-      </li>
     </div>
   );
 }

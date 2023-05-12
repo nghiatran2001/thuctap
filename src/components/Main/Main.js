@@ -1,17 +1,37 @@
-import React, { useState } from "react";
-import { Announcment, DrawerContent } from "..";
+import React, { useEffect, useState } from "react";
+import { DrawerContent } from "..";
 import "./style.css";
 import { Avatar, Button, TextField } from "@mui/material";
+import { deThi as deThiAPI } from "../../API";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInput] = useState("");
   const [image, setImage] = useState(null);
+  const [listDe, setListDe] = useState([]);
+
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
   };
+
+  // GET
+  useEffect(() => {
+    (async () => {
+      await getList();
+    })();
+  }, []);
+  const getList = async () => {
+    try {
+      const result = await deThiAPI.getList();
+      setListDe(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <DrawerContent />
@@ -78,7 +98,25 @@ export default function Main() {
                   )}
                 </div>
               </div>
-              <Announcment />
+              {/* <Announcment /> */}
+              {listDe.map((de) => {
+                return (
+                  <Link
+                    to={`/test?maDe=${de.maDe}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <div className="amt">
+                      <div className="amt__Cnt">
+                        <div className="amt__top">
+                          <Avatar />
+                          <div>{de.maDe}</div>
+                        </div>
+                        <p className="amt__txt">{de.noiDung}</p>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

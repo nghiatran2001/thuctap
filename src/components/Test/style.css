@@ -11,101 +11,13 @@
   margin-top: 1.5rem;
   overflow: hidden;
 }
-.test__content .test_btn {
-  margin: 0 20px;
-  color: white;
-  background-color: #2e7bc4;
-}
-.test__content .test_btn:hover {
-  color: rgb(0, 80, 252);
-  background-color: #cacaca;
-}
-.test_btn {
-  background-color: #4285f4;
-  margin: 0 30px;
-  color: rgb(2, 2, 2);
-}
-.test__wrapper1 {
-  height: 15rem;
-  position: relative;
-  width: 100%;
-}
-.test__bgImage {
-  background-image: url(https://gstatic.com/classroom/themes/img_backtoschool.jpg);
-  background-size: cover;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.test__emptyStyles {
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0.8;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background-image: radial-gradient(
-    25rem 18.75rem ellipse at bottom right,
-    #4285f4,
-    transparent
-  );
-}
-.test__text {
-  position: relative;
-  padding: 1.5rem;
-}
-.test__heading {
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 2.25rem;
-  font-weight: 500;
-  line-height: 2.75rem;
-  color: #fff;
-
-  margin: 0;
-}
-.test__overflow {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  display: block;
-}
-.test__section {
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 1.375rem;
-  font-weight: 400;
-  line-height: 1.75rem;
-  color: #fff;
-}
-.test__wrapper2 {
-  color: #fff;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-.test__code {
-  font-weight: 500;
-  font-style: normal;
-}
 .test__announce {
   display: flex;
   /* justify-content: center; */
   flex-shrink: 0;
-  margin-top: 1rem;
+  margin-top: 30px;
 }
-.test__announcements {
-  padding: 1rem;
-  overflow: hidden;
-  margin: -2.4rem;
-  margin-left: 1rem;
-  /* margin-top: 1.5rem; */
-}
-.test__subText {
-  margin-top: 1.5rem;
-  color: #807373;
-  font-weight: 400;
-}
+
 .test__status {
   font-size: 18px;
   border: 1.5px solid #dadce0;
@@ -114,24 +26,20 @@
   width: 900px;
   height: 100%;
 }
-.test__status .test_btn {
-  color: white;
-  background-color: #2e7bc4;
-}
-.test__status .test_btn:hover {
-  color: rgb(0, 80, 252);
-  background-color: #cacaca;
-}
-
-.test__status h1 {
-  padding-bottom: 30px;
-}
-.test__status li {
-  list-style: none;
-}
 
 @media only screen and (max-width: 842px) {
   .main__status {
     display: none;
   }
+}
+
+.test__buttons {
+  display: flex;
+  padding: 10px;
+}
+li {
+  list-style: none;
+}
+.test_content h2 {
+  margin: 10px;
 }

@@ -61,7 +61,7 @@ export default function HeaderContent({ children }) {
                 Tự luận
               </Typography>
             </Link>
-            <Link to="/test" className="link_header">
+            <Link to="/tuluan" className="link_header">
               <Typography variant="6" className="title1">
                 Trắc nghiệm
               </Typography>

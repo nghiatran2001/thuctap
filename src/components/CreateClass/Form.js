@@ -13,7 +13,7 @@ export default function Form() {
       <div className="form__inputs">
         <TextField
           id="filled-basic"
-          label="Class Name (required)"
+          label="Tên Lớp (yêu cầu)"
           className="form__input"
           variant="filled"
           value={className}
@@ -21,7 +21,7 @@ export default function Form() {
         />
         <TextField
           id="filled-basic"
-          label="Section"
+          label="Phần"
           className="form__input"
           variant="filled"
           value={Section}
@@ -29,7 +29,7 @@ export default function Form() {
         />
         <TextField
           id="filled-basic"
-          label="Subject"
+          label="Chủ Thể"
           className="form__input"
           variant="filled"
           value={Subject}
@@ -37,7 +37,7 @@ export default function Form() {
         />
         <TextField
           id="filled-basic"
-          label="Room"
+          label="Phòng"
           className="form__input"
           variant="filled"
           value={Room}

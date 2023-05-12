@@ -51,17 +51,17 @@ export default function HeaderContent({ children }) {
                 Lớp học
               </Typography>
             </Link>
-            <Link to="/mainstudent" className="link_header">
+            <Link to="/main" className="link_header">
               <Typography variant="6" className="title1">
                 Bảng tin
               </Typography>
             </Link>
-            <Link to="/tuluanstudent" className="link_header">
+            <Link to="/tuluan" className="link_header">
               <Typography variant="6" className="title1">
                 Tự luận
               </Typography>
             </Link>
-            <Link to="/tuluanstudent" className="link_header">
+            <Link to="/tuluan" className="link_header">
               <Typography variant="6" className="title1">
                 Trắc nghiệm
               </Typography>
