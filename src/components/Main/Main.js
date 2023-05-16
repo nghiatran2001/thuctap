@@ -54,8 +54,9 @@ export default function Main() {
           </div>
           <div className="main__announce">
             <div className="main__status">
-              <p>Upcoming</p>
-              <p className="main__subText">No work due</p>
+              <p>Đến hạn</p>
+              <p className="main__subText">12:00</p>
+              <p className="main__subText">01/01/2023</p>
             </div>
             <div className="main__announcements">
               <div className="main__announcementsWrapper">
@@ -93,7 +94,7 @@ export default function Main() {
                       onClick={() => setShowInput(true)}
                     >
                       <Avatar />
-                      <div>Announce Something to class</div>
+                      <div>Hãy viết gì đó...</div>
                     </div>
                   )}
                 </div>

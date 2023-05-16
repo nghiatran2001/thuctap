@@ -78,3 +78,6 @@ td {
 li {
   list-style: none;
 }
+.text-red-400 {
+  color: red;
+}

@@ -14,10 +14,7 @@ const deThi = {
     const url = API_BASE_URL + `/deThi/${maDe}`;
     return await axios.get(url);
   },
-  getDe: async ({ de }) => {
-    const url = API_BASE_URL + `/deThi/${de}`;
-    return await axios.get(url);
-  },
+
   delete: async (maDe) => {
     const url = API_BASE_URL + `/deThi/${maDe}`;
     return await axios.delete(url);

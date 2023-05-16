@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { DrawerContent } from "..";
-
 import "./style.css";
 import { deThi as deThiAPI } from "../../API";
 import { notification, Button, Modal, Form, Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { Table } from "@mui/material";
+import isEmpty from "validator/lib/isEmpty";
 
 export default function Tuluan() {
   const [api, contextHolder] = notification.useNotification();
@@ -15,25 +15,42 @@ export default function Tuluan() {
   const [maDe, setMaDe] = useState("");
   const [de, setDe] = useState("");
   const [listDe, setListDe] = useState([]);
-  const [newDe, setNewDe] = useState("");
+  const [newDe, setNewDe] = useState({});
+  const [validationMsg, setValidationMsg] = useState({});
 
   //MODAL
-  const showModal = (de) => {
-    setIsModalOpen(true);
-    setDe(de);
-  };
-  const showModall = (de) => {
-    setIsModalOpen1(true);
-    setDe(de);
+  const validateAll = () => {
+    const msg = {};
+    if (isEmpty(maDe)) {
+      msg.maDe = "Vui lòng nhập mã đề(*)";
+    }
+    if (isEmpty(noiDung)) {
+      msg.noiDung = "Vui lòng nhập nội dung(*)";
+    }
+    setValidationMsg(msg);
+    if (Object.keys(msg).length > 0) return false;
+    return true;
   };
 
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const showModall = (maDe) => {
+    setIsModalOpen1(true);
+    setDe(maDe);
+    getMaDe(maDe);
+  };
   const handleOk = () => {
+    const isValid = validateAll();
+    if (!isValid) return;
     themNoiDung();
   };
   const handleEdit = () => {
     SuaDe();
   };
   const handleCancel = () => {
+    setIsModalOpen1(false);
     setIsModalOpen(false);
     window.location.reload(true);
   };
@@ -59,20 +76,22 @@ export default function Tuluan() {
   };
 
   useEffect(() => {
-    (async () => {
-      await getMaDe();
-    })();
+    if (maDe) {
+      (async () => {
+        await getMaDe();
+      })();
+    }
   }, []);
 
-  const getMaDe = async () => {
+  const getMaDe = async (maDe) => {
     try {
-      const result = await deThiAPI.getDe({ de });
+      const result = await deThiAPI.getMaDe({ maDe });
       setNewDe(result.data);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(newDe);
+
   const XoaDe = async (maDe) => {
     try {
       const result = await deThiAPI.delete(maDe);
@@ -107,7 +126,7 @@ export default function Tuluan() {
   };
   const SuaDe = async () => {
     try {
-      const result = await deThiAPI.delete({ de });
+      const result = await deThiAPI.edit(newDe);
       if (result.status === 200) {
         await getList();
         api.open({
@@ -155,20 +174,26 @@ export default function Tuluan() {
                 <Form.Item label="Mã Đề">
                   <Input
                     placeholder="Mã Đề"
-                    id="text"
-                    name="text"
+                    id="maDe"
+                    name="maDe"
                     value={maDe}
                     onChange={(e) => setMaDe(e.target.value)}
                   />
+                  <p className="text-red-400 text-xs italic">
+                    {validationMsg.maDe}
+                  </p>
                 </Form.Item>
                 <Form.Item label="Nội Dung">
                   <TextArea
                     placeholder="Nội Dung"
-                    id="text"
-                    name="text"
+                    id="noiDung"
+                    name="noiDung"
                     value={noiDung}
                     onChange={(e) => setNoiDung(e.target.value)}
                   />
+                  <p className="text-red-400 text-xs italic">
+                    {validationMsg.noiDung}
+                  </p>
                 </Form.Item>
               </Form>
             </Modal>
@@ -216,19 +241,24 @@ export default function Tuluan() {
                             <Form.Item label="Mã Đề">
                               <Input
                                 placeholder="Mã Đề"
-                                id="text"
-                                name="text"
-                                value={maDe}
-                                onChange={(e) => setMaDe(e.target.value)}
+                                id="maDe1"
+                                name="maDe1"
+                                value={newDe.maDe}
+                                disabled
                               />
                             </Form.Item>
                             <Form.Item label="Nội Dung">
                               <TextArea
                                 placeholder="Nội Dung"
-                                id="text"
-                                name="text"
-                                value={noiDung}
-                                onChange={(e) => setNoiDung(e.target.value)}
+                                id="noiDung1"
+                                name="noiDung1"
+                                value={newDe.noiDung || ""}
+                                onChange={(e) =>
+                                  setNewDe((pre) => ({
+                                    ...pre,
+                                    noiDung: e.target.value,
+                                  }))
+                                }
                               />
                             </Form.Item>
                           </Form>

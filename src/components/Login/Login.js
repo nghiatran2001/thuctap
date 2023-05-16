@@ -31,7 +31,7 @@ export default function Login() {
                 <TextField
                   type="email"
                   id="filled-basic"
-                  label="Email"
+                  label="Email(*)"
                   className="form_input"
                   variant="filled"
                 />
@@ -40,13 +40,13 @@ export default function Login() {
                 <TextField
                   type="password"
                   id="filled-basic"
-                  label="Password"
+                  label="Mật khẩu(*)"
                   className="form_input"
                   variant="filled"
                 />
               </div>
             </FormGroup>
-            <Button className="form_btn">Login</Button>
+            <Button className="form_btn">Đăng nhập</Button>
           </div>
           <div className="form_login">
             <FormGroup action="" className="form_left">
@@ -55,7 +55,7 @@ export default function Login() {
                 <TextField
                   type="text"
                   id="filled-basic"
-                  label="UserName"
+                  label="Tên người dùng(*)"
                   className="form_input"
                   variant="filled"
                 />
@@ -64,7 +64,7 @@ export default function Login() {
                 <TextField
                   type="email"
                   id="filled-basic"
-                  label="Email"
+                  label="Email(*)"
                   className="form_input"
                   variant="filled"
                 />
@@ -73,7 +73,7 @@ export default function Login() {
                 <TextField
                   type="password"
                   id="filled-basic"
-                  label="Password"
+                  label="Mật khẩu(*)"
                   className="form_input"
                   variant="filled"
                 />
@@ -82,7 +82,7 @@ export default function Login() {
                 <TextField
                   type="password"
                   id="filled-basic"
-                  label="ConfirmPassword"
+                  label="Xác nhận mật khẩu(*)"
                   className="form_input"
                   variant="filled"
                 />
@@ -91,22 +91,13 @@ export default function Login() {
                 <TextField
                   type="phone"
                   id="filled-basic"
-                  label="PhoneNumber"
-                  className="form_input"
-                  variant="filled"
-                />
-              </div>
-              <div>
-                <TextField
-                  type="date"
-                  id="filled-basic"
-                  label="DateofBirth"
+                  label="Số điện thoại(*)"
                   className="form_input"
                   variant="filled"
                 />
               </div>
             </FormGroup>
-            <Button className="form_btn">Register</Button>
+            <Button className="form_btn">Đăng ký</Button>
           </div>
         </div>
       </Dialog>
